@@ -7,7 +7,7 @@
         <em:creator>Mike Perry, Peter Eckersley, Sebastian Schmidt &amp; Stefan Tomanek</em:creator>
         <em:id>guardrail@guardrail.wertarbyte.de</em:id>
         <em:description>Protect yourself from being lead astray! Automatically use HTTPS security on many sites.</em:description>
-        <em:version>0.9.9.development.4</em:version>
+        <em:version>0.9.9.development.5</em:version>
         <em:homepageURL>https://github.com/guardrail</em:homepageURL>
         <em:optionsURL>chrome://guardrail/content/preferences.xul</em:optionsURL>
         <em:iconURL>chrome://guardrail/skin/guardrail.png</em:iconURL>
