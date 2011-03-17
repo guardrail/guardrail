@@ -1,0 +1,36 @@
+guardrail (written in lower case) is, by now, essentially a fork of
+EFF's great HTTPS everywhere. We thank the EFF for all effort they've
+done in building this software - but, unfortunately - development
+appears to got stuck.
+
+guardrail aims to implement everything HTTPS Everywhere did, but in the
+mid term the goals are as following (in that order):
+
+- Implement rule loading apart from the .xpi package, just like e.g.
+  AdBlock Plus does. Currently, Firefox has to be restarted for every
+  rule update to get the new .xpi loaded. For maintainance reasons we
+  may also split off the the rules into a separate .xpi.
+
+- Provide information about certificates. As you are reading this either
+  on github or via a cloned repository currently you may be geek enough
+  to figure out it's hard to convince your parents to install, say,
+  CACert's root certificate. guardrail should provide an easy way to
+  display more information about an issuer's certificate, whether it's
+  installed or not.
+
+- Imitate SSL Patrol. SSL Patrol is a very neat Firefox extension that
+  informs you of changes in SSL certificates. However, sites as Google
+  tend to randomly deliver different SSL certificates for no obvious
+  reason. guardrail could add such hints into its rules to make your
+  mother not be afraid when using SSL.
+
+- Probably a whole lot more.
+
+If you'd like to get in touch with us, just fork the project from github
+(https://github.com/guardrail/guardrail) and send a pull request,
+subscribe to our mailing list
+(http://ml.snow-crash.org/mailman/listinfo/guardrail-dev - no SSL, sorry
+;-) or just talk to us (tommie or yath) on IRCNet.
+
+We're awaiting your comments, sugesstions, brainstorming and - of
+course! - your pull requests!
