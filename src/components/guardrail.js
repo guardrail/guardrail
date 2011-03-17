@@ -22,8 +22,8 @@ const CR = Components.results;
 
 const CP_SHOULDPROCESS = 4;
 
-const SERVICE_CTRID = "@eff.org/https-everywhere;1";
-const SERVICE_ID=Components.ID("{32c165b4-fe5e-4964-9250-603c410631b4}");
+const SERVICE_CTRID = "@guardrail.wertarbyte.de/guardrail;1";
+const SERVICE_ID=Components.ID("{4e209878-5085-11e0-b987-485b39142920}");
 const SERVICE_NAME = "Encrypts your communications with a number of major websites";
 
 const LLVAR = "LogLevel";
@@ -46,7 +46,7 @@ const INCLUDE = function(name) {
       INCLUDE(arguments[j]);
   else if (!_INCLUDED[name]) {
     try {
-      LOADER.loadSubScript("chrome://https-everywhere/content/code/"
+      LOADER.loadSubScript("chrome://guardrail/content/code/"
               + name + ".js");
       _INCLUDED[name] = true;
     } catch(e) {
@@ -95,7 +95,7 @@ const DUMMYOBJ = {};
 
 const EARLY_VERSION_CHECK = !("nsISessionStore" in CI && typeof(/ /) === "object");
 
-const OBSERVER_TOPIC_URI_REWRITE = "https-everywhere-uri-rewrite";
+const OBSERVER_TOPIC_URI_REWRITE = "guardrail-uri-rewrite";
 
 function xpcom_generateQI(iids) {
   var checks = [];
@@ -249,7 +249,7 @@ HTTPSEverywhere.prototype = {
       try {
         // Firefox >= 4
         Components.utils.import("resource://gre/modules/AddonManager.jsm");
-        AddonManager.getAddonByID("https-everywhere@eff.org",
+        AddonManager.getAddonByID("guardrail@guardrail.wertarbyte.de",
           function(addon) {
             RuleWriter.addonDir = addon.
               getResourceURI("").QueryInterface(CI.nsIFileURL).file;

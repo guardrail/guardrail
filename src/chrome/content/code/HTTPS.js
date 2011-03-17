@@ -10,12 +10,12 @@ var STS = {
 // policy loading.
 const PolicyState = {
   attach: function(channel) {
-    IOUtil.attachToChannel(channel, "httpseverywhere.policyLoaded", true);
+    IOUtil.attachToChannel(channel, "guardrail.policyLoaded", true);
   },
 
   extract: function(channel) {
     var res = IOUtil.extractFromChannel(channel,
-            "httpseverywhere.policyLoaded", true);
+            "guardrail.policyLoaded", true);
     return res;
   },
 };

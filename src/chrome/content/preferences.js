@@ -5,7 +5,7 @@ INFO=3;
 NOTE=4;
 WARN=5;
 
-https_everywhere = CC["@eff.org/https-everywhere;1"].getService(Components.interfaces.nsISupports).wrappedJSObject;
+https_everywhere = CC["@guardrail.wertarbyte.de/guardrail;1"].getService(Components.interfaces.nsISupports).wrappedJSObject;
 
 const id_prefix = "he_enable";
 function https_settings_changed(doc)
@@ -26,7 +26,7 @@ function https_prefs_init(doc) {
 
   var o_httpsprefs = https_everywhere.get_prefs();
 
-  var prefs_window = doc.getElementById('https-everywhere-prefs');
+  var prefs_window = doc.getElementById('guardrail-prefs');
   var rs = doc.getElementById('https_everywhere_RuleSetList');
   var rulesets = https_everywhere.https_rules.rulesets;
   var hbox;

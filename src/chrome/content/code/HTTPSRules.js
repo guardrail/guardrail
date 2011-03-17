@@ -113,7 +113,7 @@ const RuleWriter = {
       .getService(CI.nsIProperties)
       .get(loc, CI.nsILocalFile)
       .clone();
-    file.append("HTTPSEverywhereUserRules");
+    file.append("GuardrailUserRules");
     // Check for existence, if not, create.
     if (!file.exists()) {
       file.create(CI.nsIFile.DIRECTORY_TYPE, 0700);
@@ -130,8 +130,8 @@ const RuleWriter = {
         // Firefox < 4
         this.addonDir = CC["@mozilla.org/extensions/manager;1"].
           getService(CI.nsIExtensionManager).
-          getInstallLocation("https-everywhere@eff.org").
-          getItemFile("https-everywhere@eff.org", "");
+          getInstallLocation("guardrail@guardrail.wertarbyte.de").
+          getItemFile("guardrail@guardrail.wertarbyte.de", "");
       } catch(e) {
         // Firefox >= 4 (this should not be reached)
       }

@@ -1,0 +1,4 @@
+<!ENTITY guardrail.prefs.title "HTTPS Everywhere Preferences">
+<!ENTITY guardrail.prefs.enable_all "Enable All">
+<!ENTITY guardrail.prefs.disable_all "Disable All">
+<!ENTITY guardrail.prefs.reset_defaults "Reset to Defaults">
