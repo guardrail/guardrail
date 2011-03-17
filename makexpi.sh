@@ -77,3 +77,5 @@ else
   printf >&2 "Rules disabled by default: $(grep -lr default_off chrome/content/rules | wc -l)\n"
   printf >&2 "Created %s\n" "$XPI_NAME"
 fi
+
+ln -sf "$XPI_NAME" "../$APP_NAME-latest.xpi"
