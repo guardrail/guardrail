@@ -1,0 +1,4 @@
+<ruleset name="Mensafuchs">
+  <target host="mensafuchs.de"/>
+  <rule from="^http://mensafuchs\.de/" to="https://mensafuchs.de/"/>
+</ruleset>
