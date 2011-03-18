@@ -3,8 +3,6 @@
 # Used to import upstream changes to the NoScript code that use for request
 # rewriting.
 
-# foo
-
 FROM=../noscript-2.0.5.1
 TO=../noscript-2.0.9.8rc1
 
