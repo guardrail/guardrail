@@ -1,0 +1,7 @@
+<ruleset name="Easterhegg 2011">
+  <target host="eh11.easterhegg.eu"/>
+  <target host="eh11.hamburg.ccc.de"/>
+
+  <rule from="^http://eh11\.easterhegg\.eu/" to="https://eh11.hamburg.ccc.de/"/>
+  <rule from="^http://eh11\.hamburg\.ccc\.de/" to="https://eh11.hamburg.ccc.de/"/>
+</ruleset>
