@@ -4,7 +4,7 @@ done in building this software - but, unfortunately - development
 appears to got stuck.
 
 guardrail aims to implement everything HTTPS Everywhere did, but in the
-mid term the goals are as following (in that order):
+mid term the goals are as following (not in that exact order):
 
 - Implement rule loading apart from the .xpi package, just like e.g.
   AdBlock Plus does. Currently, Firefox has to be restarted for every
@@ -23,6 +23,9 @@ mid term the goals are as following (in that order):
   tend to randomly deliver different SSL certificates for no obvious
   reason. guardrail could add such hints into its rules to make your
   mother not be afraid when using SSL.
+
+- Disable sending of Referer: headers when displaying mixed contents,
+  e.g. on Wikipedia.
 
 - Probably a whole lot more.
 
