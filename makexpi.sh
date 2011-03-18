@@ -34,26 +34,15 @@ else
   exit 1
 fi
 
-if [ -n "$1" ] && [ "$1" != "uncommitted" ]; then
-    VERSION="$1"
-    TARG="$1"
-else
-    VERSION="$(grep em:version src/install.rdf | sed -e 's/[<>]/	/g' | cut -f3)~pre"
-    TARG=HEAD
-    if [ "$1" != "uncommitted" ] && [ -n "$(git status src -s)" ] ; then
-        printf >&2 "\
-WARNING: There are uncommitted changes in your current repostitory.
-WARNING: These changes will not be included in the generated .xpi
-WARNING: Run 'git status' for information about the uncommitted changes.
-WARNING: Or, use 'makexpi.sh uncommitted' to include them in the build.
-" 
-    fi
-fi
+VERSION="0.9.9.development.$(date +%s)"
 
 XPI_NAME="pkg/$APP_NAME-$VERSION.xpi"
 [ -d pkg ] || mkdir pkg
 
 cd "src"
+
+sed -e "s/%VERSION%/$VERSION/g" < install.rdf.tmpl > install.rdf
+
 if [ "$1" = "uncommitted" ]; then
     printf >&2 "WARNING: using zip instead of git archive to build .xpi\n"
     CHANGES="$(git status . -s)"
@@ -65,7 +54,7 @@ if [ "$1" = "uncommitted" ]; then
     # current patterns (2010-11-09)
     zip -X -q -9r "../$XPI_NAME" . "-x@../.gitignore"
 else
-    git archive --format=zip -9 "$TARG" . > "../$XPI_NAME"
+    git archive --format=zip -9 HEAD . > "../$XPI_NAME"
 fi
 
 ret="$?"
@@ -79,3 +68,5 @@ else
 fi
 
 ln -sf "$XPI_NAME" "../$APP_NAME-latest.xpi"
+SHA1=$(sha1sum "../$XPI_NAME"|cut -d" " -f1)
+sed -e "s/%VERSION%/$VERSION/g" -e "s/%SHA1%/$SHA1/" < ../update.rdf.tmpl > ../$APP_NAME-latest-update.rdf
