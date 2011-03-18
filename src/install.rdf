@@ -3,7 +3,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:name>Guardrail</em:name>
+        <em:name>guardrail</em:name>
         <em:creator>Mike Perry, Peter Eckersley, Sebastian Schmidt &amp; Stefan Tomanek</em:creator>
         <em:id>guardrail@guardrail.wertarbyte.de</em:id>
         <em:description>Protect yourself from being lead astray! Automatically use HTTPS security on many sites.</em:description>
