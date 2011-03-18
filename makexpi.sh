@@ -43,19 +43,7 @@ cd "src"
 
 sed -e "s/%VERSION%/$VERSION/g" < install.rdf.tmpl > install.rdf
 
-if [ "$1" = "uncommitted" ]; then
-    printf >&2 "WARNING: using zip instead of git archive to build .xpi\n"
-    CHANGES="$(git status . -s)"
-    if [ -n "$CHANGES" ]; then
-        printf >&2 "WARNING: uncommitted changes were included:\n%s\n" "$CHANGES"
-    fi
-    # FIXME: is it really acceptable to reuse .gitignore to specify
-    # include patterns for /usr/bin/zip?  It seems to work for our
-    # current patterns (2010-11-09)
-    zip -X -q -9r "../$XPI_NAME" . "-x@../.gitignore"
-else
-    git archive --format=zip -9 HEAD . > "../$XPI_NAME"
-fi
+zip -X -q -9r "../$XPI_NAME" . "-x@../.gitignore" -xinstall.rdf.tmpl
 
 ret="$?"
 if [ "$ret" != 0 ]; then
