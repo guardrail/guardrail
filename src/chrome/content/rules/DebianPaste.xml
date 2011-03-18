@@ -1,0 +1,4 @@
+<ruleset name="Debian Pastebin">
+  <target host="paste.debian.net"/>
+  <rule from="^http://paste\.debian\.net/" to="https://paste.debian.net/"/>
+</ruleset>
