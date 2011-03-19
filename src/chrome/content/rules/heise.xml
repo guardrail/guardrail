@@ -1,0 +1,6 @@
+<ruleset name="Heise">
+  <target host="heise-shop.de"/>
+  <target host="www.heise-shop.de"/>
+
+  <rule from="^http://(www\.)?heise-shop\.de/" to="https://www.heise-shop.de/"/>
+</ruleset>
