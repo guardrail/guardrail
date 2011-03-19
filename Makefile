@@ -9,6 +9,6 @@ prerelease: pkg
 pkg:
 	mkdir pkg
 clean:
-	rm -f pkg/*.xpi
+	rm -f pkg/*.xpi src/install.rdf guardrail-latest-update.rdf
 
 .PHONY: clean prerelease
