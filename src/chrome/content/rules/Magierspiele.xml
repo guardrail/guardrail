@@ -1,0 +1,6 @@
+<ruleset name="Magierspiele">
+  <target host="magierspiele.de"/>
+  <target host="www.magierspiele.de"/>
+
+  <rule from="^http://(www\.)?magierspiele\.de/" to="https://$1magierspiele.de/"/>
+</ruleset>
