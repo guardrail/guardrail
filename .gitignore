@@ -2,3 +2,5 @@ pkg/*.xpi
 guardrail-latest.xpi
 *~
 *.swp
+src/install.rdf
+guardrail-latest-update.rdf
