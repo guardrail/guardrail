@@ -25,6 +25,8 @@ APP_NAME=guardrail
 
 cd "$(dirname $0)"
 
+[ -e makexpi.local ] && . ./makexpi.local
+
 if ./trivial-validate src/chrome/content/rules >&2
 then
   echo Validation of included rulesets completed. >&2

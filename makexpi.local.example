@@ -1,0 +1,2 @@
+# adjust path
+PATH=${PATH}:/opt/foo
