@@ -1,0 +1,4 @@
+<ruleset name="Trackntrace.de">
+  <target host="trackntrace.de"/>
+  <rule from="^http://trackntrace\.de/" to="https://trackntrace.de/"/>
+</ruleset>
