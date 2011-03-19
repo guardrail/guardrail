@@ -68,4 +68,4 @@ else
     echo "No working Uhura installation found, not generating update.rdf." >&2
 fi
 
-ln -sf "$XPI_NAME" "../$APP_NAME-latest.xpi"
+ln -sf "$XPI_NAME" "../latest.xpi"
