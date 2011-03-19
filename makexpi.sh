@@ -57,6 +57,15 @@ else
   printf >&2 "Created %s\n" "$XPI_NAME"
 fi
 
+if [ -x "$UHURA" ]; then
+    echo "Generating update.rdf..." >&2
+    if [ -z "$KEYFILE" -o -z "$UPDATE_URL" ]; then
+        echo "Either KEYFILE or UPDATE_URL are not specified. Exiting." >&2
+        exit 1
+    fi
+    "$UHURA" -o ../latest-update.rdf -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_URL"
+else
+    echo "No working Uhura installation found, not generating update.rdf." >&2
+fi
+
 ln -sf "$XPI_NAME" "../$APP_NAME-latest.xpi"
-SHA1=$(sha1sum "../$XPI_NAME"|cut -d" " -f1)
-sed -e "s/%VERSION%/$VERSION/g" -e "s/%SHA1%/$SHA1/" < ../update.rdf.tmpl > ../$APP_NAME-latest-update.rdf

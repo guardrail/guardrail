@@ -1,2 +1,3 @@
-# adjust path
-PATH=${PATH}:/opt/foo
+UHURA=/home/foo/mxtools/uhura
+KEYFILE=/home/foo/foo-signkey.pem
+UPDATE_URL=http://yourhost.example/foo.xpi
