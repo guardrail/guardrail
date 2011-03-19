@@ -63,6 +63,7 @@ if [ -x "$UHURA" ]; then
         echo "Either KEYFILE or UPDATE_URL are not specified. Exiting." >&2
         exit 1
     fi
+    [ -e ../latest-update.rdf ] && rm -f ../latest-update.rdf
     "$UHURA" -o ../latest-update.rdf -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_URL"
 else
     echo "No working Uhura installation found, not generating update.rdf." >&2
