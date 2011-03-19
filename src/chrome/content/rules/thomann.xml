@@ -1,0 +1,4 @@
+<ruleset name="thomann.de">
+  <target host="www.thomann.de"/>
+  <rule from="^http://www\.thomann\.de/" to="https://www.thomann.de/"/>
+</ruleset>
