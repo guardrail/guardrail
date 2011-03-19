@@ -23,7 +23,7 @@ const CR = Components.results;
 const CP_SHOULDPROCESS = 4;
 
 const SERVICE_CTRID = "@guardrail.wertarbyte.de/guardrail;1";
-const SERVICE_ID=Components.ID("{4e209878-5085-11e0-b987-485b39142920}");
+const SERVICE_ID=Components.ID("{4d5bb12a-5085-11e0-a296-485b39142920}");
 const SERVICE_NAME = "Encrypts your communications with a number of major websites";
 
 const LLVAR = "LogLevel";
