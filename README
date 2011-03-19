@@ -18,11 +18,11 @@ mid term the goals are as following (not in that exact order):
   display more information about an issuer's certificate, whether it's
   installed or not.
 
-- Imitate SSL Patrol. SSL Patrol is a very neat Firefox extension that
-  informs you of changes in SSL certificates. However, sites as Google
-  tend to randomly deliver different SSL certificates for no obvious
-  reason. guardrail could add such hints into its rules to make your
-  mother not be afraid when using SSL.
+- Imitate Certificate Patrol. Certificate Patrol is a very neat Firefox
+  extension that informs you of changes in SSL certificates. However, sites as
+  Google tend to randomly deliver different SSL certificates for no obvious
+  reason. guardrail could add such hints into its rules to make your mother not
+  be afraid when using SSL.
 
 - Disable sending of Referer: headers when displaying mixed contents,
   e.g. on Wikipedia.
