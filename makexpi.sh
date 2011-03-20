@@ -71,7 +71,8 @@ fi
 
 ln -sf "$(basename "$XPI_NAME")" "../pkg/latest.xpi"
 
+echo "Generating sha1sums..." >&2
+sha1sum ../pkg/*.xpi ../pkg/*.rdf | sed -e 's,\.\./pkg/,,' > ../pkg/SHA1SUMS
 if [ -d "$GPGDIR" ]; then
-    echo "Generating sha1sums..." >&2
-    sha1sum ../pkg/*.xpi ../pkg/*.rdf | sed -e 's,\.\./pkg/,,' | tee ../pkg/SHA1SUMS | gpg --homedir="$GPGDIR" --clearsign > ../pkg/SHA1SUMS.signed
+    gpg --homedir="$GPGDIR" --clearsign > ../pkg/SHA1SUMS.signed < ../pkg/SHA1SUMS
 fi
