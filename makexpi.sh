@@ -38,7 +38,7 @@ fi
 
 VERSION="0.9.9.development.$(date +%s)"
 
-XPI_NAME="pkg/$APP_NAME-$VERSION.xpi"
+XPI_NAME="pkg/$VERSION.xpi"
 [ -d pkg ] || mkdir pkg
 
 cd "src"
@@ -59,14 +59,14 @@ fi
 
 if [ -x "$UHURA" ]; then
     echo "Generating update.rdf..." >&2
-    if [ -z "$KEYFILE" -o -z "$UPDATE_URL" ]; then
-        echo "Either KEYFILE or UPDATE_URL are not specified. Exiting." >&2
+    if [ -z "$KEYFILE" -o -z "$UPDATE_BASEURL" ]; then
+        echo "Either KEYFILE or UPDATE_BASEURL are not specified. Exiting." >&2
         exit 1
     fi
-    [ -e ../latest-update.rdf ] && rm -f ../latest-update.rdf
-    "$UHURA" -o ../latest-update.rdf -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_URL"
+    [ -e ../pkg/latest-update.rdf ] && rm -f ../pkg/latest-update.rdf
+    "$UHURA" -o ../pkg/latest-update.rdf -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_BASEURL$(basename "$XPI_NAME")"
 else
     echo "No working Uhura installation found, not generating update.rdf." >&2
 fi
 
-ln -sf "$XPI_NAME" "../latest.xpi"
+ln -sf "$(basename "$XPI_NAME")" "../pkg/latest.xpi"
