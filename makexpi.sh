@@ -69,4 +69,9 @@ else
     echo "No working Uhura installation found, not generating update.rdf." >&2
 fi
 
+if [ -d "$GPGDIR" ]; then
+    echo "Generating sha1sums..." >&2
+    sha1sum ../pkg/*.xpi ../pkg/*.rdf | sed -e 's,\.\./pkg/,,' | gpg --homedir="$GPGDIR" --clearsign > ../pkg/SHA1SUMS
+fi
+
 ln -sf "$(basename "$XPI_NAME")" "../pkg/latest.xpi"

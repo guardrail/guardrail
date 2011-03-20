@@ -1,3 +1,4 @@
 UHURA=/home/foo/mxtools/uhura
 KEYFILE=/home/foo/foo-signkey.pem
 UPDATE_BASEURL=http://yourhost.example/
+GPGDIR=/home/foo/gnupg
