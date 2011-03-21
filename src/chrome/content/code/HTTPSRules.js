@@ -148,6 +148,8 @@ const RuleWriter = {
   read: function(file, targets, existing_rulesets) {
     if (!file.exists())
       return null;
+    if (file.path.match("\.xml$") == null)
+        return null;
     if ((targets == null) && (targets != {}))
       this.log(WARN, "TARGETS IS NULL");
     var data = "";
