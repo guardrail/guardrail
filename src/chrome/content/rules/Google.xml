@@ -71,13 +71,13 @@
 
   <rule
     from="^http://(www\.)?google\.[^/@:][^/@:]/(search\?|firefox|#)"
-      to="https://encrypted.google.com/#" />
+      to="https://encrypted.google.com/$2" />
 
   <!-- some look like "google.co.jp" -->
   <!-- and some crazy ones like "google.com.au" -->
   <rule
     from="^http://(www\.)?google\.com?\.[^/@:][^/@:]/(search\?|firefox|#)"
-      to="https://encrypted.google.com/#" />
+      to="https://encrypted.google.com/$2" />
   <!-- Completion urls look like this:
 
 http://clients2.google.co.jp/complete/search?hl=ja&client=hp&expIds=17259,24660,24729,24745&q=m&cp=1 HTTP/1.1\r\n
