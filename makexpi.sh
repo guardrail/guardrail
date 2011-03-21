@@ -64,7 +64,7 @@ if [ -x "$UHURA" ]; then
         exit 1
     fi
     [ -e ../pkg/latest-update.rdf ] && rm -f ../pkg/latest-update.rdf
-    "$UHURA" -o ../pkg/latest-update.rdf -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_BASEURL$(basename "$XPI_NAME")"
+    "$UHURA" -o ../pkg/latest-update.rdf -a sha512 -k "$KEYFILE" -h -v ../"$XPI_NAME" "$UPDATE_BASEURL$(basename "$XPI_NAME")"
 else
     echo "No working Uhura installation found, not generating update.rdf." >&2
 fi
