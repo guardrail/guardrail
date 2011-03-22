@@ -1,4 +1,4 @@
-<ruleset name="AK-Vorrat">
+<ruleset name="AK-Vorrat" default_off="Invalid cert domain">
   <target host="vorratsdatenspeicherung.de" />
   <target host="www.vorratsdatenspeicherung.de" />
 
