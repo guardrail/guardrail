@@ -1,0 +1,5 @@
+<ruleset name="hamburg.ccc.de">
+  <target host="*.hamburg.ccc.de" />
+
+  <rule from="^http://([^/:@]*)\.hamburg\.ccc\.de/" to="https://$1.hamburg.ccc.de/"/>
+</ruleset>
