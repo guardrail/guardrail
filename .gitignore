@@ -1,4 +1,4 @@
-pkg/*.xpi
+pkg/
 guardrail-latest.xpi
 *~
 *.swp
