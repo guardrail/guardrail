@@ -45,7 +45,7 @@ cd "src"
 
 sed -e "s/%VERSION%/$VERSION/g" < install.rdf.tmpl > install.rdf
 
-zip -X -q -9r "../$XPI_NAME" . "-x@../.gitignore" -xinstall.rdf.tmpl
+zip -X -q -9r "../$XPI_NAME" . -xinstall.rdf.tmpl
 
 ret="$?"
 if [ "$ret" != 0 ]; then
