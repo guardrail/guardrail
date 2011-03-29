@@ -45,7 +45,10 @@ cd "src"
 
 sed -e "s/%VERSION%/$VERSION/g" < install.rdf.tmpl > install.rdf
 
-zip -X -q -9r "../$XPI_NAME" . -xinstall.rdf.tmpl
+set -x
+ls chrome/content/rules | grep -v \.xml\$
+zip -X -q -9r "../$XPI_NAME" . -x install.rdf.tmpl $(find chrome/content/rules ! -name \*.xml) @
+set +x
 
 ret="$?"
 if [ "$ret" != 0 ]; then
