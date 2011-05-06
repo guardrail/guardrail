@@ -1,4 +1,4 @@
-<ruleset name="GNU">
+<ruleset name="GNU" default_off="covered by FSF">
   <target host="gnu.org" />
   <target host="*.gnu.org" />
 
